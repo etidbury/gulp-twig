@@ -59,6 +59,8 @@ module.exports = function (options) {
             Twig.cache(false);
         }
 
+        twigOpts.rethrow=true;
+
         if (options.functions) {
             options.functions.forEach(function (func) {
                 Twig.extendFunction(func.name, func.func);

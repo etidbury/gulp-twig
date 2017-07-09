@@ -1,11 +1,11 @@
 {
   "name": "gulp-twig",
   "description": "Twig.js plugin for gulp.js (gulpjs.com)",
-  "version": "1.0.0",
-  "homepage": "http://github.com/zimmen/gulp-twig",
+  "version": "1.0.1",
+  "homepage": "http://github.com/etidbury/gulp-twig",
   "repository": {
     "type": "git",
-    "url": "http://github.com/zimmen/gulp-twig.git"
+    "url": "http://github.com/etidbury/gulp-twig.git"
   },
   "author": "Simon de Turck <simon@zimmen.com> (http://www.zimmen.com)",
   "main": "./index.js",
