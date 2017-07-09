@@ -63,6 +63,9 @@ module.exports = function (options) {
             twigOpts.rethrow=true;
         }
 
+        if (options.strict_variables !== undefined) {
+            twigOpts.strict_variables=true;
+        }
 
         if (options.functions) {
             options.functions.forEach(function (func) {
