@@ -21,14 +21,14 @@ module.exports = function (options) {
         if (file.isStream()) {
             return cb(new gutil.PluginError(PLUGIN_NAME, "Streaming not supported!"));
         }
-        
-        data._file   = file;
-        if(options.changeExt == false){
+
+        data._file = file;
+        if (options.changeExt == false) {
             data._target = {
-                 path: file.path,
-                 relative: file.relative
-             }           
-        }else{
+                path: file.path,
+                relative: file.relative
+            }
+        } else {
             data._target = {
                 path: rext(file.path, '.html'),
                 relative: rext(file.relative, '.html')
@@ -60,11 +60,11 @@ module.exports = function (options) {
         }
 
         if (options.rethrow !== undefined) {
-            twigOpts.rethrow=true;
+            twigOpts.rethrow = true;
         }
 
         if (options.strict_variables !== undefined) {
-            twigOpts.strict_variables=true;
+            twigOpts.strict_variables = true;
         }
 
         if (options.functions) {
@@ -79,16 +79,15 @@ module.exports = function (options) {
             });
         }
 
-        if(options.extend) {
+        if (options.extend) {
             Twig.extend(options.extend);
             delete options.extend;
         }
 
-        template = twig(twigOpts);
-
         try {
+            template = twig(twigOpts);
             file.contents = new Buffer(template.render(data));
-        }catch(e){
+        } catch (e) {
             if (options.errorLogToConsole) {
                 gutil.log(PLUGIN_NAME + ' ' + e);
                 return cb();
